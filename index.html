@@ -40,7 +40,7 @@
 
   /* hero */
   .hero{background:var(--navy);color:#fff;padding:130px 0 90px;position:relative;overflow:hidden}
-  .hero .wrap{display:grid;grid-template-columns:1fr 1fr;gap:40px;align-items:center}
+  .hero .wrap{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:40px;align-items:center}
   .hello{color:var(--amber);font-weight:600;font-size:1rem}
   .hero h1{font-size:clamp(2.4rem,5.5vw,3.8rem);line-height:1.05;margin:10px 0 18px;letter-spacing:-.025em}
   .hero p{color:rgba(255,255,255,.78);font-size:1.1rem;max-width:470px}
@@ -80,7 +80,8 @@
   .net .lbl{fill:rgba(255,255,255,.45);font-size:9px;font-family:ui-monospace,Consolas,monospace}
   .net .pkt.log{fill:#7fe0d0}
   @keyframes flow{to{stroke-dashoffset:-20}}
-  .side{display:flex;flex-direction:column;gap:14px}
+  .side{display:flex;flex-direction:column;gap:14px;min-width:0}
+  .feed li .m{min-width:0}
   .feed{background:rgba(5,12,20,.75);border:1px solid rgba(46,168,255,.25);border-radius:10px;font-family:ui-monospace,'Cascadia Code',Consolas,monospace;font-size:.74rem;overflow:hidden}
   .feed .hd{display:flex;justify-content:space-between;padding:7px 12px;border-bottom:1px solid rgba(46,168,255,.18);color:rgba(255,255,255,.55)}
   .feed .hd b{color:#7fe0d0;font-weight:600}
@@ -189,7 +190,14 @@
     .rv,.stagger>*{opacity:1;transform:none;transition:none}
   }
   @media (max-width:860px){
-    .hero .wrap,.about{grid-template-columns:1fr}
+    .hero{padding:96px 0 60px}
+    .hero .wrap,.about{grid-template-columns:minmax(0,1fr)}
+    .hero p{font-size:1rem}
+    .feed{font-size:.68rem}
+    .feed ol{height:104px}
+    .feed .hd span{display:none}
+    section{padding:64px 0}
+    .wrap{padding:0 20px}
     .projects{grid-template-columns:1fr}
     nav ul{display:none}
     .contact{padding:48px 24px}
