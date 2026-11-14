@@ -119,7 +119,13 @@
   .job h3{color:var(--ink);font-size:1.12rem;margin-top:2px}
   .job .org{color:var(--amber-d);font-weight:600;font-size:.97rem}
   .job ul{margin:10px 0 0 18px;font-size:.96rem}
-  .job li{margin-bottom:4px}
+  .job li{margin-bottom:5px}
+  .job li b{color:var(--ink)}
+  .job .sum{margin-top:8px;font-size:.97rem}
+  .job .pills{margin-top:12px}
+  a.org{text-decoration:none;border-bottom:1px dashed transparent;transition:border-color .2s}
+  a.org:hover{border-bottom-color:var(--amber-d)}
+  .pj .where a{text-decoration:none;color:var(--amber-d)}
 
   /* formação */
   .edu{display:grid;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));gap:18px}
@@ -304,7 +310,7 @@
         <article class="pj">
           <div class="band" style="background:#5b7fa6"></div>
           <div class="body">
-            <span class="where">FonNet Networks · 2025</span>
+            <span class="where"><a href="https://www.fonnet.com.br/" target="_blank" rel="noopener">FonNet Networks ↗</a> · 2025</span>
             <h3>Monitoramento com Zabbix e Grafana</h3>
             <p>Acompanhei a disponibilidade de servidores, serviços e ativos de infraestrutura, com painéis no Grafana.</p>
             <div class="pills"><span class="pill">Zabbix</span><span class="pill">Grafana</span><span class="pill">Windows</span></div>
@@ -313,7 +319,7 @@
         <article class="pj">
           <div class="band" style="background:#b5654a"></div>
           <div class="body">
-            <span class="where">Makro Engenharia · 2022 – 2025</span>
+            <span class="where"><a href="https://makroengenharia.com.br/" target="_blank" rel="noopener">Makro Engenharia ↗</a> · 2022 – 2025</span>
             <h3>Firewall, VPN e migração de ERP</h3>
             <p>Administrei o Sophos Firewall e os acessos VPN entre unidades, participei da migração do TOTVS RM para o Protheus e apoiei auditorias ISO 9001, 14001 e 45001.</p>
             <div class="pills"><span class="pill">Sophos</span><span class="pill">VPN</span><span class="pill">Active Directory</span><span class="pill">ISO</span></div>
@@ -343,40 +349,83 @@
         <div class="job">
           <span class="when">abr 2025 – atual</span>
           <h3>Analista de Suporte Sênior</h3><span class="org">JMBA Soluções em Tecnologia</span>
-          <ul><li>Administração do GLPI: entidades, perfis, permissões, SLAs, regras, formulários, plugins e notificações</li>
-            <li>Processos ITSM, catálogo de serviços e fluxos de atendimento</li>
-            <li>Implantação e administração do Wazuh</li>
-            <li>Documentação técnica e padronização de procedimentos</li></ul>
+          <p class="sum">Administração e sustentação de ambientes corporativos, com foco em GLPI e processos ITSM.</p>
+          <ul>
+            <li><b>GLPI:</b> configuração de entidades, perfis, permissões, SLAs, regras de negócio, formulários, plugins e notificações.</li>
+            <li><b>Processos ITSM:</b> estruturação e melhoria do catálogo de serviços e dos fluxos de atendimento.</li>
+            <li><b>Segurança com Wazuh:</b> implantação e administração para monitoramento de endpoints, análise de logs e eventos de segurança.</li>
+            <li><b>Documentação:</b> padronização de procedimentos e apoio técnico às equipes de suporte.</li>
+          </ul>
+          <div class="pills"><span class="pill">GLPI</span><span class="pill">ITSM</span><span class="pill">Wazuh</span><span class="pill">SLA</span></div>
         </div>
         <div class="job">
           <span class="when">jan 2025 – abr 2025</span>
-          <h3>Analista de Infraestrutura Júnior</h3><span class="org">FonNet Networks</span>
-          <ul><li>Usuários, grupos e permissões em Active Directory, Microsoft 365 e Azure</li>
-            <li>Monitoramento com Zabbix e Grafana</li>
-            <li>Diagnóstico de incidentes de conectividade e sistemas</li></ul>
+          <h3>Analista de Infraestrutura Júnior</h3><a class="org" href="https://www.fonnet.com.br/" target="_blank" rel="noopener">FonNet Networks ↗</a>
+          <p class="sum">Sustentação de ambientes corporativos com tecnologias Microsoft, gestão de identidades e monitoramento.</p>
+          <ul>
+            <li><b>Identidade e acesso:</b> administração de usuários, grupos, acessos e permissões em Active Directory, Microsoft 365 e Microsoft Azure.</li>
+            <li><b>Microsoft 365:</b> suporte aos serviços corporativos, gerenciamento de usuários e resolução de incidentes.</li>
+            <li><b>Monitoramento:</b> acompanhamento de servidores, serviços e ativos com Zabbix e Grafana.</li>
+            <li><b>Incidentes:</b> diagnóstico de problemas de conectividade, sistemas operacionais e recursos corporativos.</li>
+            <li><b>Disponibilidade:</b> acompanhamento dos serviços e suporte à operação de infraestrutura.</li>
+          </ul>
+          <div class="pills"><span class="pill">Azure</span><span class="pill">Microsoft 365</span><span class="pill">Active Directory</span><span class="pill">Zabbix</span><span class="pill">Grafana</span></div>
         </div>
         <div class="job">
           <span class="when">jul 2022 – jan 2025</span>
-          <h3>Assistente de Infraestrutura</h3><span class="org">Makro Engenharia</span>
-          <ul><li>Active Directory e acessos em TOTVS RM, Protheus e Fluig</li>
-            <li>Sophos Firewall, VPN, redes, VoIP, servidores e backup</li>
-            <li>Migração TOTVS RM → Protheus e auditorias ISO</li>
-            <li>Orientação de estagiários e aprendizes</li></ul>
+          <h3>Assistente de Infraestrutura</h3><a class="org" href="https://makroengenharia.com.br/" target="_blank" rel="noopener">Makro Engenharia ↗</a>
+          <p class="sum">Suporte e sustentação de todo o ambiente de TI: identidade, rede, firewall, servidores, sistemas e segurança.</p>
+          <ul>
+            <li><b>Active Directory e acessos:</b> criação e administração de usuários, grupos e permissões, e gestão de contas em TOTVS RM, Protheus, Fluig e aplicações internas.</li>
+            <li><b>Redes:</b> conectividade, cabeamento estruturado, configuração de equipamentos de rede, impressoras e telefonia VoIP.</li>
+            <li><b>Firewall e VPN:</b> administração do Sophos Firewall e dos acessos VPN.</li>
+            <li><b>Servidores e backup:</b> disponibilidade dos servidores, rotinas de backup e verificações preventivas.</li>
+            <li><b>GLPI e ativos:</b> gestão de chamados, controle de ativos e inventário.</li>
+            <li><b>Sistemas corporativos:</b> suporte a TOTVS RM, Protheus, Fluig e Carol Clock-In.</li>
+            <li><b>Projetos:</b> migração do TOTVS RM para o Protheus e apoio às auditorias ISO 9001, 14001 e 45001.</li>
+            <li><b>Equipe:</b> orientação de estagiários e aprendizes.</li>
+          </ul>
+          <div class="pills"><span class="pill">Active Directory</span><span class="pill">Sophos</span><span class="pill">VPN</span><span class="pill">Backup</span><span class="pill">Protheus</span><span class="pill">ISO</span></div>
         </div>
         <div class="job">
           <span class="when">mar 2022 – jul 2022</span>
-          <h3>Operador de Service Desk (N1)</h3><span class="org">Lanlink Informática</span>
-          <ul><li>Incidentes e requisições em GLPI e Assyst, triagem e acompanhamento de SLA</li></ul>
+          <h3>Operador de Service Desk (N1)</h3><a class="org" href="https://www.lanlink.com.br/" target="_blank" rel="noopener">Lanlink Informática ↗</a>
+          <p class="sum">Suporte N1 e gestão de incidentes e requisições seguindo boas práticas de ITSM.</p>
+          <ul>
+            <li><b>Incidentes e requisições:</b> registro, categorização, priorização e acompanhamento de chamados em GLPI e Assyst.</li>
+            <li><b>Suporte N1:</b> atendimento remoto e telefônico com diagnóstico inicial e orientação aos usuários.</li>
+            <li><b>Triagem e escalonamento:</b> encaminhamento correto para as equipes especializadas.</li>
+            <li><b>SLA:</b> acompanhamento dos prazos de atendimento.</li>
+            <li><b>Base de conhecimento:</b> registro de soluções e procedimentos.</li>
+          </ul>
+          <div class="pills"><span class="pill">GLPI</span><span class="pill">Assyst</span><span class="pill">ITIL</span><span class="pill">SLA</span></div>
         </div>
         <div class="job">
           <span class="when">jun 2021 – mar 2022</span>
-          <h3>Estagiário de Infraestrutura e Suporte</h3><span class="org">Makro Engenharia</span>
-          <ul><li>Active Directory, redes, servidores, gestão de ativos e suporte técnico</li></ul>
+          <h3>Estagiário de Infraestrutura e Suporte</h3><a class="org" href="https://makroengenharia.com.br/" target="_blank" rel="noopener">Makro Engenharia ↗</a>
+          <p class="sum">Apoio à operação de TI, com prática em identidade, redes, servidores e atendimento.</p>
+          <ul>
+            <li><b>Active Directory e acessos:</b> criação e manutenção de usuários, contas e permissões em AD, TOTVS RM, Fluig e sistemas internos.</li>
+            <li><b>Redes:</b> manutenção da infraestrutura, cabeamento, crimpagem RJ45, configuração de equipamentos e VoIP.</li>
+            <li><b>Servidores:</b> monitoramento de servidores locais e apoio nas rotinas de manutenção.</li>
+            <li><b>Gestão de ativos:</b> controle de inventário e acompanhamento dos equipamentos de TI.</li>
+            <li><b>Suporte e hardware:</b> atendimento remoto e presencial, manutenção de desktops, notebooks e impressoras, e chamados em GLPI e Ocomon.</li>
+          </ul>
+          <div class="pills"><span class="pill">Active Directory</span><span class="pill">Redes</span><span class="pill">GLPI</span><span class="pill">Ocomon</span></div>
         </div>
         <div class="job">
           <span class="when">abr 2019 – mar 2021</span>
           <h3>Aprendiz de TI</h3><span class="org">Normatel Engenharia</span>
-          <ul><li>Active Directory, redes, gestão de ativos e automação de rotinas com scripts</li></ul>
+          <p class="sum">Primeiro contato com infraestrutura e suporte em ambiente corporativo.</p>
+          <ul>
+            <li><b>Active Directory:</b> criação e manutenção de usuários, contas e acessos.</li>
+            <li><b>Sistemas corporativos:</b> administração de acessos e suporte a TOTVS RM e Soap Admin.</li>
+            <li><b>Gestão de ativos:</b> controle de computadores, notebooks e periféricos para rastreabilidade do parque.</li>
+            <li><b>Redes:</b> cabeamento estruturado, crimpagem RJ45 e telefonia VoIP.</li>
+            <li><b>Automação:</b> scripts para padronizar configurações e tarefas administrativas, como a automatização de assinaturas de e-mail.</li>
+            <li><b>Suporte e hardware:</b> diagnóstico de incidentes e manutenção de desktops, notebooks e impressoras.</li>
+          </ul>
+          <div class="pills"><span class="pill">Active Directory</span><span class="pill">Redes</span><span class="pill">Ativos</span><span class="pill">Scripts</span></div>
         </div>
       </div>
     </div>
@@ -389,7 +438,7 @@
         <h2>Estudos e cursos</h2>
       </div>
       <div class="edu stagger" style="margin-top:28px">
-        <div class="ed"><small>Graduação</small><h3>Segurança da Informação</h3><p>UNIASSELVI</p></div>
+        <div class="ed"><small>Graduação</small><h3>Segurança da Informação</h3><p><a class="org" style="font-size:inherit" href="https://portal.uniasselvi.com.br/" target="_blank" rel="noopener">UNIASSELVI ↗</a></p></div>
         <div class="ed"><small>Técnico</small><h3>Manutenção de Computadores e Redes</h3><p>Senap Educação · 2017 – 2018</p></div>
         <div class="ed"><small>Curso</small><h3>Wazuh do básico ao avançado</h3><p>2026</p></div>
         <div class="ed"><small>Curso</small><h3>Fundamentos da IA Moderna</h3><p>Machine Learning, LLMs, IA Generativa e Agentes</p></div>
