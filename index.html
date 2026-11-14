@@ -8,7 +8,9 @@
 <meta property="og:title" content="Stwarte Learte — Infraestrutura e Segurança">
 <meta property="og:description" content="Projetos, conhecimentos e trajetória em infraestrutura de TI e segurança.">
 <meta property="og:type" content="website">
-<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><rect width='32' height='32' rx='7' fill='%23142233'/><g fill='none' stroke='%23ffffff' stroke-width='1.6'><rect x='6' y='6' width='20' height='6' rx='1.5'/><rect x='6' y='13' width='20' height='6' rx='1.5'/><rect x='6' y='20' width='20' height='6' rx='1.5'/></g><g fill='%23f2a541'><circle cx='10' cy='9' r='1.3'/><circle cx='10' cy='16' r='1.3'/><circle cx='10' cy='23' r='1.3'/></g><g stroke='%23ffffff' stroke-width='1.4' stroke-linecap='round'><path d='M17 9h6M17 16h6M17 23h6'/></g></svg>">
+<link rel="icon" type="image/png" href="favicon.png">
+<link rel="apple-touch-icon" href="apple-touch-icon.png">
+<meta property="og:image" content="https://stwartelearte.github.io/logo.png">
 <style>
   :root{
     --navy:#142233; --navy2:#1b2d42; --ink:#1d2733; --text:#3a4552; --muted:#6b7684;
@@ -27,7 +29,8 @@
   nav.solid{background:rgba(250,248,244,.94);box-shadow:0 1px 0 var(--line);backdrop-filter:blur(6px)}
   nav .wrap{display:flex;justify-content:space-between;align-items:center;height:64px}
   .brand{font-weight:700;text-decoration:none;color:#fff;transition:color .3s;letter-spacing:-.01em}
-  .brand i{display:inline-block;width:9px;height:9px;border-radius:50%;background:var(--amber);margin-right:8px}
+  .brand{display:flex;align-items:center;gap:10px}
+  .brand img{border-radius:7px}
   nav ul{display:flex;gap:26px;list-style:none}
   nav ul a{text-decoration:none;color:rgba(255,255,255,.75);font-size:.93rem;transition:color .3s}
   nav ul a:hover{color:var(--amber)}
@@ -171,7 +174,7 @@
 
 <nav id="nav">
   <div class="wrap">
-    <a class="brand" href="#top"><i></i>Stwarte Learte</a>
+    <a class="brand" href="#top"><img src="apple-touch-icon.png" alt="" width="30" height="30">Stwarte Learte</a>
     <ul>
       <li><a href="#sobre">Sobre</a></li>
       <li><a href="#conhecimentos">Conhecimentos</a></li>
