@@ -198,7 +198,7 @@
   .lvl em{grid-column:1/-1;font-style:normal;font-size:.7rem;color:var(--muted)}
   .lvl[data-l="1"] i:nth-child(-n+1),.lvl[data-l="2"] i:nth-child(-n+2),.lvl[data-l="3"] i:nth-child(-n+3){background:var(--amber)}
   .stagger .lvl i{transform-origin:left;transition:transform .5s ease}
-  .stagger:not(.in) .lvl i{transform:scaleX(0)}
+  .sk:not(.on) .lvl i{transform:scaleX(0)}
   .legend{display:flex;gap:18px;flex-wrap:wrap;font-size:.82rem;color:var(--muted);margin:-28px 0 28px}
   .legend b{color:var(--ink);font-weight:600}
 
@@ -666,10 +666,22 @@
     b.firstChild.textContent = open ? 'Mostrar menos ' : 'Saiba mais ';
   }));
 
+
+  // barras de nível: cada card anima quando aparece; sem suporte, mostra direto
+  const cards = document.querySelectorAll('.sk');
+  if (reduce || !('IntersectionObserver' in window)) cards.forEach(c => c.classList.add('on'));
+  else {
+    const io2 = new IntersectionObserver(es => es.forEach(e => {
+      if (e.isIntersecting) { setTimeout(() => e.target.classList.add('on'), 250); io2.unobserve(e.target); }
+    }), {threshold:0});
+    cards.forEach(c => io2.observe(c));
+    setTimeout(() => cards.forEach(c => c.classList.add('on')), 4000);
+  }
+
   // entrada das seções
   const io = new IntersectionObserver(es => es.forEach(e => {
     if (e.isIntersecting) { e.target.classList.add('in'); io.unobserve(e.target); }
-  }), {threshold:.15});
+  }), {threshold:0, rootMargin:"0px 0px -12% 0px"});
   document.querySelectorAll('.rv,.stagger').forEach(el => io.observe(el));
 
   // linha da trajetória que preenche ao rolar
