@@ -4,248 +4,493 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Stwarte Learte — Infraestrutura e Segurança</title>
-<meta name="description" content="Stwarte Learte, Analista de Suporte Sênior em Fortaleza. Infraestrutura de TI, segurança, Active Directory, Microsoft 365 e Microsoft Azure.">
+<meta name="description" content="Portfólio de Stwarte Learte: infraestrutura de TI, segurança, Active Directory, Microsoft 365 e Microsoft Azure. Fortaleza, CE.">
 <meta property="og:title" content="Stwarte Learte — Infraestrutura e Segurança">
-<meta property="og:description" content="Infraestrutura de TI, segurança e Microsoft Azure.">
-<meta property="og:type" content="profile">
-<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><rect width='32' height='32' fill='%2316202b'/><text x='16' y='22' text-anchor='middle' font-family='Georgia,serif' font-size='16' fill='%23fff'>SL</text></svg>">
+<meta property="og:description" content="Projetos, conhecimentos e trajetória em infraestrutura de TI e segurança.">
+<meta property="og:type" content="website">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><rect width='32' height='32' rx='8' fill='%23142233'/><circle cx='16' cy='16' r='5' fill='%23f2a541'/></svg>">
 <style>
   :root{
-    --ink:#16202b; --text:#2b3640; --muted:#66727e; --line:#e3e6ea;
-    --bg:#ffffff; --soft:#f6f7f8; --accent:#1f4e79;
-    --serif:Georgia,'Times New Roman',serif;
+    --navy:#142233; --navy2:#1b2d42; --ink:#1d2733; --text:#3a4552; --muted:#6b7684;
+    --paper:#faf8f4; --card:#ffffff; --line:#e7e2d9;
+    --amber:#f2a541; --amber-d:#c97f16; --teal:#2f8f83; --red:#d9534f;
     --sans:-apple-system,'Segoe UI',Roboto,'Helvetica Neue',Arial,sans-serif;
   }
   *{box-sizing:border-box;margin:0;padding:0}
-  body{background:var(--bg);color:var(--text);font-family:var(--sans);font-size:16px;line-height:1.65}
-  a{color:var(--accent)}
-  .wrap{max-width:800px;margin:0 auto;padding:0 24px}
+  html{scroll-behavior:smooth}
+  body{background:var(--paper);color:var(--text);font-family:var(--sans);line-height:1.6}
+  a{color:inherit}
+  .wrap{max-width:1080px;margin:0 auto;padding:0 28px}
 
-  header.top{border-bottom:1px solid var(--line)}
-  header.top .wrap{display:flex;justify-content:space-between;align-items:center;height:56px;font-size:.9rem}
-  header.top b{color:var(--ink);font-weight:600}
-  header.top nav a{color:var(--muted);text-decoration:none;margin-left:20px}
-  header.top nav a:hover{color:var(--ink)}
+  /* nav */
+  nav{position:fixed;inset:0 0 auto;z-index:20;transition:background .3s,box-shadow .3s}
+  nav.solid{background:rgba(250,248,244,.94);box-shadow:0 1px 0 var(--line);backdrop-filter:blur(6px)}
+  nav .wrap{display:flex;justify-content:space-between;align-items:center;height:64px}
+  .brand{font-weight:700;text-decoration:none;color:#fff;transition:color .3s;letter-spacing:-.01em}
+  .brand i{display:inline-block;width:9px;height:9px;border-radius:50%;background:var(--amber);margin-right:8px}
+  nav ul{display:flex;gap:26px;list-style:none}
+  nav ul a{text-decoration:none;color:rgba(255,255,255,.75);font-size:.93rem;transition:color .3s}
+  nav ul a:hover{color:var(--amber)}
+  nav.solid .brand{color:var(--ink)}
+  nav.solid ul a{color:var(--muted)}
+  nav.solid ul a:hover{color:var(--amber-d)}
 
-  .intro{padding:72px 0 56px}
-  h1{font-family:var(--serif);font-weight:normal;font-size:2.6rem;color:var(--ink);line-height:1.15}
-  .role{margin-top:8px;color:var(--muted);font-size:1.05rem}
-  .intro p.lead{margin-top:28px;font-size:1.08rem;max-width:640px}
-  .links{margin-top:24px;font-size:.95rem}
-  .links a{margin-right:18px}
+  /* hero */
+  .hero{background:var(--navy);color:#fff;padding:130px 0 90px;position:relative;overflow:hidden}
+  .hero .wrap{display:grid;grid-template-columns:1fr 1fr;gap:40px;align-items:center}
+  .hello{color:var(--amber);font-weight:600;font-size:1rem}
+  .hero h1{font-size:clamp(2.4rem,5.5vw,3.8rem);line-height:1.05;margin:10px 0 18px;letter-spacing:-.025em}
+  .hero p{color:rgba(255,255,255,.78);font-size:1.1rem;max-width:470px}
+  .hero .rot{color:#fff;font-weight:600;border-bottom:2px solid var(--amber);display:inline-block;min-width:10ch;transition:opacity .35s}
+  .cta{display:flex;gap:12px;margin-top:30px;flex-wrap:wrap}
+  .btn{display:inline-block;padding:12px 22px;border-radius:999px;font-weight:600;font-size:.95rem;text-decoration:none;transition:transform .2s,background .2s}
+  .btn:hover{transform:translateY(-2px)}
+  .btn.main{background:var(--amber);color:var(--navy)}
+  .btn.main:hover{background:#ffb95c}
+  .btn.ghost{border:1.5px solid rgba(255,255,255,.35);color:#fff}
+  .btn.ghost:hover{border-color:#fff}
 
-  section{padding:48px 0;border-top:1px solid var(--line)}
-  h2{font-family:var(--serif);font-weight:normal;font-size:1.5rem;color:var(--ink);margin-bottom:24px}
-  h3{font-size:1rem;color:var(--ink);font-weight:600}
-  p+p{margin-top:12px}
+  /* network diagram */
+  .net{width:100%;height:auto}
+  .net .link{stroke:rgba(255,255,255,.18);stroke-width:2;fill:none}
+  .net .node rect{fill:var(--navy2);stroke:rgba(255,255,255,.22);stroke-width:1.5;rx:10}
+  .net .node text{fill:#fff;font-size:12px;font-family:var(--sans);text-anchor:middle}
+  .net .node .sub{fill:rgba(255,255,255,.5);font-size:10px}
+  .net .node.siem rect{stroke:var(--teal)}
+  .net .node.fw rect{stroke:var(--amber)}
+  .net .pkt{fill:var(--amber)}
+  .net .pkt.bad{fill:var(--red)}
+  .net .alert{fill:none;stroke:var(--red);stroke-width:2;opacity:0}
+  .net .alert.on{animation:ping 1.2s ease-out}
+  .net .tag{font-size:11px;fill:var(--red);font-family:var(--sans);opacity:0;transition:opacity .4s}
+  .net .tag.on{opacity:1}
+  @keyframes ping{0%{opacity:.9;transform:scale(.6)}100%{opacity:0;transform:scale(1.6)}}
+  .net .alert{transform-box:fill-box;transform-origin:center}
 
-  .grid{display:grid;grid-template-columns:180px 1fr;gap:10px 24px}
-  .grid dt{color:var(--muted);font-size:.92rem}
-  .grid dd{margin-bottom:6px}
+  /* sections */
+  section{padding:96px 0}
+  .kicker{color:var(--amber-d);font-weight:700;font-size:.85rem;letter-spacing:.08em;text-transform:uppercase}
+  h2{font-size:clamp(1.8rem,3.5vw,2.4rem);color:var(--ink);letter-spacing:-.02em;margin:6px 0 14px;line-height:1.15}
+  .intro{max-width:620px;color:var(--muted);font-size:1.05rem;margin-bottom:44px}
 
-  .job{display:grid;grid-template-columns:180px 1fr;gap:24px;padding:20px 0;border-top:1px solid var(--line)}
-  .job:first-of-type{border-top:0;padding-top:0}
-  .job .when{color:var(--muted);font-size:.9rem}
-  .job .org{color:var(--muted);font-size:.95rem}
-  .job ul{margin:10px 0 0 18px}
+  /* sobre */
+  .about{display:grid;grid-template-columns:1.2fr 1fr;gap:56px;align-items:start}
+  .about p{font-size:1.06rem}
+  .about p+p{margin-top:14px}
+  .now{background:var(--card);border:1px solid var(--line);border-radius:16px;padding:26px}
+  .now h3{font-size:.85rem;text-transform:uppercase;letter-spacing:.08em;color:var(--muted);margin-bottom:14px}
+  .now li{list-style:none;padding:10px 0;border-top:1px solid var(--line);display:flex;gap:12px;align-items:baseline}
+  .now li:first-of-type{border-top:0;padding-top:0}
+  .now li b{color:var(--ink);min-width:88px;font-size:.92rem}
+
+  /* conhecimentos */
+  .skills{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:18px}
+  .sk{background:var(--card);border:1px solid var(--line);border-radius:16px;padding:24px;transition:transform .25s,box-shadow .25s,border-color .25s}
+  .sk:hover{transform:translateY(-4px);box-shadow:0 14px 30px rgba(20,34,51,.08);border-color:var(--amber)}
+  .sk .ic{width:42px;height:42px;border-radius:12px;background:#fdf1de;display:grid;place-items:center;margin-bottom:14px}
+  .sk .ic svg{width:22px;height:22px;stroke:var(--amber-d);fill:none;stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round}
+  .sk h3{color:var(--ink);font-size:1.08rem;margin-bottom:6px}
+  .sk p{color:var(--muted);font-size:.93rem;margin-bottom:14px}
+  .pills{display:flex;flex-wrap:wrap;gap:6px}
+  .pill{font-size:.78rem;padding:4px 10px;border-radius:999px;background:var(--paper);border:1px solid var(--line);color:var(--text)}
+
+  /* projetos */
+  .projects{display:grid;grid-template-columns:repeat(2,1fr);gap:22px}
+  .pj{background:var(--card);border:1px solid var(--line);border-radius:18px;overflow:hidden;display:flex;flex-direction:column;transition:transform .25s,box-shadow .25s}
+  .pj:hover{transform:translateY(-5px);box-shadow:0 18px 40px rgba(20,34,51,.1)}
+  .pj .band{height:8px}
+  .pj .body{padding:26px;display:flex;flex-direction:column;gap:10px;flex:1}
+  .pj .where{font-size:.82rem;color:var(--muted);font-weight:600}
+  .pj h3{color:var(--ink);font-size:1.2rem;line-height:1.3}
+  .pj p{font-size:.96rem}
+  .pj .pills{margin-top:auto;padding-top:8px}
+  .pj.lab{border-style:dashed;background:transparent}
+  .soon{align-self:flex-start;font-size:.75rem;font-weight:700;color:var(--teal);background:#e3f2ef;padding:3px 10px;border-radius:999px}
+
+  /* trajetória */
+  .tl{position:relative;margin-left:8px}
+  .tl .rail{position:absolute;left:0;top:8px;bottom:8px;width:3px;background:var(--line);border-radius:3px}
+  .tl .fill{position:absolute;left:0;top:8px;width:3px;height:0;background:var(--amber);border-radius:3px;transition:height .15s linear}
+  .job{position:relative;padding:0 0 38px 40px}
+  .job:last-child{padding-bottom:0}
+  .job::before{content:"";position:absolute;left:-6px;top:6px;width:15px;height:15px;border-radius:50%;background:var(--paper);border:3px solid var(--line);transition:border-color .4s,background .4s}
+  .job.lit::before{border-color:var(--amber);background:var(--amber)}
+  .job .when{font-size:.85rem;color:var(--muted);font-weight:600}
+  .job h3{color:var(--ink);font-size:1.12rem;margin-top:2px}
+  .job .org{color:var(--amber-d);font-weight:600;font-size:.97rem}
+  .job ul{margin:10px 0 0 18px;font-size:.96rem}
   .job li{margin-bottom:4px}
 
-  .work{padding:20px 0;border-top:1px solid var(--line)}
-  .work:first-of-type{border-top:0;padding-top:0}
-  .work .meta{color:var(--muted);font-size:.88rem;margin-top:2px}
-  .work p{margin-top:8px}
+  /* formação */
+  .edu{display:grid;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));gap:18px}
+  .ed{background:var(--card);border:1px solid var(--line);border-radius:16px;padding:22px}
+  .ed small{color:var(--muted);font-weight:600;text-transform:uppercase;font-size:.72rem;letter-spacing:.08em}
+  .ed h3{color:var(--ink);font-size:1.02rem;margin:6px 0 4px}
+  .ed p{color:var(--muted);font-size:.9rem}
 
-  .status{font-size:.8rem;color:var(--muted);border:1px solid var(--line);padding:1px 7px;border-radius:3px;margin-left:8px;font-weight:normal}
+  /* contato */
+  .contact{background:var(--navy);color:#fff;border-radius:24px;padding:64px 48px;text-align:center}
+  .contact h2{color:#fff}
+  .contact p{color:rgba(255,255,255,.75);max-width:520px;margin:0 auto 28px;font-size:1.05rem}
+  .contact .cta{justify-content:center}
 
-  footer{border-top:1px solid var(--line);padding:28px 0 40px;color:var(--muted);font-size:.85rem}
+  footer{padding:36px 0;text-align:center;color:var(--muted);font-size:.86rem}
 
-  @media (max-width:640px){
-    header.top nav{display:none}
-    h1{font-size:2.1rem}
-    .grid,.job{grid-template-columns:1fr;gap:4px}
+  /* animações de entrada */
+  .rv{opacity:0;transform:translateY(24px);transition:opacity .7s ease,transform .7s ease}
+  .rv.in{opacity:1;transform:none}
+  .stagger>*{opacity:0;transform:translateY(20px);transition:opacity .6s ease,transform .6s ease}
+  .stagger.in>*{opacity:1;transform:none}
+  .stagger.in>*:nth-child(2){transition-delay:.08s}
+  .stagger.in>*:nth-child(3){transition-delay:.16s}
+  .stagger.in>*:nth-child(4){transition-delay:.24s}
+  .stagger.in>*:nth-child(5){transition-delay:.32s}
+  .stagger.in>*:nth-child(6){transition-delay:.4s}
+
+  @media (prefers-reduced-motion:reduce){
+    html{scroll-behavior:auto}
+    .rv,.stagger>*{opacity:1;transform:none;transition:none}
   }
-  @media print{
-    header.top,footer{display:none}
-    .intro{padding:0 0 24px}
-    section{padding:20px 0;break-inside:avoid-page}
-    a{color:inherit;text-decoration:none}
+  @media (max-width:860px){
+    .hero .wrap,.about{grid-template-columns:1fr}
+    .projects{grid-template-columns:1fr}
+    nav ul{display:none}
+    .contact{padding:48px 24px}
   }
 </style>
 </head>
 <body>
 
-<header class="top">
+<nav id="nav">
   <div class="wrap">
-    <b>Stwarte Learte</b>
-    <nav>
-      <a href="#experiencia">Experiência</a>
-      <a href="#trabalhos">Trabalhos</a>
-      <a href="#competencias">Competências</a>
-      <a href="#contato">Contato</a>
-    </nav>
+    <a class="brand" href="#top"><i></i>Stwarte Learte</a>
+    <ul>
+      <li><a href="#sobre">Sobre</a></li>
+      <li><a href="#conhecimentos">Conhecimentos</a></li>
+      <li><a href="#projetos">Projetos</a></li>
+      <li><a href="#trajetoria">Trajetória</a></li>
+      <li><a href="#contato">Contato</a></li>
+    </ul>
+  </div>
+</nav>
+
+<header class="hero" id="top">
+  <div class="wrap">
+    <div class="rv">
+      <span class="hello">Olá, eu sou o</span>
+      <h1>Stwarte Learte</h1>
+      <p>Analista de Suporte Sênior em Fortaleza. Mantenho ambientes corporativos funcionando e protegidos, trabalhando com <span class="rot" id="rot">Active Directory</span></p>
+      <div class="cta">
+        <a class="btn main" href="#projetos">Ver projetos</a>
+        <a class="btn ghost" href="https://www.linkedin.com/in/stwartelearte" target="_blank" rel="noopener">LinkedIn</a>
+      </div>
+    </div>
+
+    <svg class="net rv" viewBox="0 0 460 340" role="img" aria-label="Diagrama de rede: internet, firewall, servidores e Wazuh monitorando os eventos">
+      <path class="link" id="l1" d="M70 60 L230 60"/>
+      <path class="link" id="l2" d="M230 60 L230 170"/>
+      <path class="link" id="l3" d="M230 170 L90 270"/>
+      <path class="link" id="l4" d="M230 170 L230 270"/>
+      <path class="link" id="l5" d="M230 170 L370 270"/>
+      <path class="link" id="l6" d="M230 60 L390 60"/>
+      <path class="link" id="l7" d="M390 60 L390 160" stroke-dasharray="4 5"/>
+
+      <g class="node"><rect x="20" y="38" width="100" height="44"/><text x="70" y="58">Internet</text><text class="sub" x="70" y="72">tráfego externo</text></g>
+      <g class="node fw"><rect x="180" y="38" width="100" height="44"/><text x="230" y="58">Firewall</text><text class="sub" x="230" y="72">VPN · proxy</text></g>
+      <g class="node"><rect x="180" y="148" width="100" height="44"/><text x="230" y="168">Switch core</text><text class="sub" x="230" y="182">rede interna</text></g>
+      <g class="node"><rect x="40" y="248" width="100" height="44"/><text x="90" y="268">AD / LDAP</text><text class="sub" x="90" y="282">identidade</text></g>
+      <g class="node"><rect x="180" y="248" width="100" height="44"/><text x="230" y="268">Servidores</text><text class="sub" x="230" y="282">Proxmox</text></g>
+      <g class="node"><rect x="320" y="248" width="100" height="44"/><text x="370" y="268">Endpoints</text><text class="sub" x="370" y="282">agentes</text></g>
+      <g class="node siem"><rect x="340" y="38" width="100" height="44"/><text x="390" y="58">Wazuh</text><text class="sub" x="390" y="72">SIEM</text></g>
+      <g class="node"><rect x="340" y="138" width="100" height="44"/><text x="390" y="158">Zabbix</text><text class="sub" x="390" y="172">Grafana</text></g>
+
+      <circle class="alert" id="alert" cx="230" cy="60" r="34"/>
+      <text class="tag" id="tag" x="230" y="112" text-anchor="middle">acesso suspeito bloqueado</text>
+      <g id="pkts"></g>
+    </svg>
   </div>
 </header>
 
-<main class="wrap">
+<main>
 
-  <div class="intro">
-    <h1>Stwarte Learte</h1>
-    <p class="role">Analista de Suporte Sênior · Infraestrutura de TI e Segurança · Fortaleza, CE</p>
-    <p class="lead">Trabalho com infraestrutura de TI desde 2019. Comecei como aprendiz e passei por suporte, Active Directory, redes, firewall e VPN até chegar à gestão de serviços e ao monitoramento de segurança. Hoje administro GLPI e Wazuh na JMBA Soluções em Tecnologia e estudo Microsoft Azure, identidade e segurança em ambientes cloud e híbridos.</p>
-    <p class="links">
-      <a href="https://www.linkedin.com/in/stwartelearte">LinkedIn</a>
-      <a href="https://github.com/stwartelearte">GitHub</a>
-      <a href="mailto:stwartep.learte@gmail.com">stwartep.learte@gmail.com</a>
-    </p>
-  </div>
-
-  <section id="experiencia">
-    <h2>Experiência</h2>
-
-    <div class="job">
-      <div class="when">abr 2025 – atual</div>
-      <div>
-        <h3>Analista de Suporte Sênior</h3>
-        <div class="org">JMBA Soluções em Tecnologia</div>
-        <ul>
-          <li>Administração do GLPI: entidades, perfis, permissões, SLAs, regras de negócio, formulários, plugins e notificações.</li>
-          <li>Estruturação de processos ITSM, catálogo de serviços e fluxos de atendimento.</li>
-          <li>Implantação e administração do Wazuh para monitoramento de endpoints, análise de logs e eventos de segurança.</li>
-          <li>Documentação técnica, padronização de procedimentos e apoio às equipes de suporte.</li>
-        </ul>
+  <section id="sobre">
+    <div class="wrap about">
+      <div class="rv">
+        <span class="kicker">Sobre</span>
+        <h2>Da bancada de suporte à segurança da infraestrutura</h2>
+        <p>Comecei em 2019 como aprendiz de TI, crimpando cabo e criando usuário no Active Directory. De lá pra cá passei por service desk, redes, firewall, VPN, servidores e backup, sempre perto da operação.</p>
+        <p>Hoje, na JMBA Soluções em Tecnologia, cuido do GLPI e dos processos de atendimento, monitoro ambientes e implantei o Wazuh para dar visibilidade aos eventos de segurança. O próximo passo é a nuvem: estou estudando Microsoft Azure, identidade e segurança em ambientes híbridos.</p>
       </div>
-    </div>
-
-    <div class="job">
-      <div class="when">jan 2025 – abr 2025</div>
-      <div>
-        <h3>Analista de Infraestrutura Júnior</h3>
-        <div class="org">FonNet Networks</div>
+      <div class="now rv">
+        <h3>Agora</h3>
         <ul>
-          <li>Usuários, grupos, acessos e permissões em Active Directory, Microsoft 365 e Microsoft Azure.</li>
-          <li>Monitoramento de servidores, serviços e ativos com Zabbix e Grafana.</li>
-          <li>Diagnóstico de incidentes de conectividade, sistemas operacionais e recursos corporativos.</li>
-        </ul>
-      </div>
-    </div>
-
-    <div class="job">
-      <div class="when">jul 2022 – jan 2025</div>
-      <div>
-        <h3>Assistente de Infraestrutura</h3>
-        <div class="org">Makro Engenharia</div>
-        <ul>
-          <li>Active Directory e gestão de acessos, incluindo contas em TOTVS RM, Protheus e Fluig.</li>
-          <li>Administração do Sophos Firewall e dos acessos VPN.</li>
-          <li>Redes, cabeamento, VoIP, disponibilidade de servidores e rotinas de backup.</li>
-          <li>Participação na migração do TOTVS RM para o Protheus e apoio em auditorias ISO 9001, 14001 e 45001.</li>
-          <li>Orientação de estagiários e aprendizes.</li>
-        </ul>
-      </div>
-    </div>
-
-    <div class="job">
-      <div class="when">mar 2022 – jul 2022</div>
-      <div>
-        <h3>Operador de Service Desk (N1)</h3>
-        <div class="org">Lanlink Informática</div>
-        <ul>
-          <li>Registro, triagem, escalonamento e acompanhamento de SLA de chamados em GLPI e Assyst.</li>
-        </ul>
-      </div>
-    </div>
-
-    <div class="job">
-      <div class="when">jun 2021 – mar 2022</div>
-      <div>
-        <h3>Estagiário de Infraestrutura e Suporte</h3>
-        <div class="org">Makro Engenharia</div>
-        <ul>
-          <li>Active Directory, redes, servidores, gestão de ativos e suporte técnico.</li>
-        </ul>
-      </div>
-    </div>
-
-    <div class="job">
-      <div class="when">abr 2019 – mar 2021</div>
-      <div>
-        <h3>Aprendiz de TI</h3>
-        <div class="org">Normatel Engenharia</div>
-        <ul>
-          <li>Active Directory, redes, gestão de ativos e automação de rotinas administrativas com scripts.</li>
+          <li><b>Trabalho</b><span>Analista de Suporte Sênior na JMBA</span></li>
+          <li><b>Estudando</b><span>Microsoft Azure, identidade e segurança em cloud</span></li>
+          <li><b>Construindo</b><span>Homelab com Proxmox e Wazuh</span></li>
+          <li><b>Base</b><span>Fortaleza, CE</span></li>
         </ul>
       </div>
     </div>
   </section>
 
-  <section id="trabalhos">
-    <h2>Trabalhos em destaque</h2>
-
-    <div class="work">
-      <h3>Monitoramento de segurança com Wazuh</h3>
-      <div class="meta">JMBA · 2025 – atual</div>
-      <p>Implantação e administração do Wazuh para centralizar logs e eventos de segurança dos endpoints, com análise de alertas e incidentes.</p>
-    </div>
-
-    <div class="work">
-      <h3>Estruturação de ITSM no GLPI</h3>
-      <div class="meta">JMBA · 2025 – atual</div>
-      <p>Organização do atendimento em torno de catálogo de serviços, SLAs, regras de negócio, formulários e notificações, com documentação dos procedimentos para a equipe.</p>
-    </div>
-
-    <div class="work">
-      <h3>Monitoramento de infraestrutura com Zabbix e Grafana</h3>
-      <div class="meta">FonNet Networks · 2025</div>
-      <p>Acompanhamento da disponibilidade de servidores, serviços e ativos, com painéis no Grafana.</p>
-    </div>
-
-    <div class="work">
-      <h3>Firewall, VPN e migração de ERP</h3>
-      <div class="meta">Makro Engenharia · 2022 – 2025</div>
-      <p>Administração do Sophos Firewall e dos acessos VPN entre unidades. Participação na migração do TOTVS RM para o Protheus e nas auditorias ISO.</p>
-    </div>
-
-    <div class="work">
-      <h3>Homelab de infraestrutura e segurança <span class="status">em andamento</span></h3>
-      <div class="meta">Projeto pessoal</div>
-      <p>Ambiente em Proxmox com rede segmentada, Active Directory, Wazuh e monitoramento, usado para testar detecções com ataques simulados. A documentação será publicada aqui no GitHub.</p>
+  <section id="conhecimentos" style="padding-top:0">
+    <div class="wrap">
+      <div class="rv">
+        <span class="kicker">Conhecimentos</span>
+        <h2>O que eu uso no dia a dia</h2>
+        <p class="intro">Ferramentas que já usei em ambiente real de empresa, agrupadas pelo tipo de problema que resolvem.</p>
+      </div>
+      <div class="skills stagger">
+        <div class="sk">
+          <div class="ic"><svg viewBox="0 0 24 24"><circle cx="12" cy="8" r="4"/><path d="M4 21c0-4 4-6 8-6s8 2 8 6"/></svg></div>
+          <h3>Identidade e acesso</h3>
+          <p>Usuários, grupos e permissões do on-premises à nuvem.</p>
+          <div class="pills"><span class="pill">Active Directory</span><span class="pill">LDAP</span><span class="pill">Microsoft 365</span><span class="pill">Microsoft Azure</span></div>
+        </div>
+        <div class="sk">
+          <div class="ic"><svg viewBox="0 0 24 24"><path d="M12 3l8 3v6c0 5-3.5 8-8 9-4.5-1-8-4-8-9V6z"/><path d="M9 12l2 2 4-4"/></svg></div>
+          <h3>Segurança</h3>
+          <p>Visibilidade de eventos e controle do que entra e sai da rede.</p>
+          <div class="pills"><span class="pill">Wazuh</span><span class="pill">Sophos Firewall</span><span class="pill">VPN</span><span class="pill">Proxy</span><span class="pill">Análise de logs</span></div>
+        </div>
+        <div class="sk">
+          <div class="ic"><svg viewBox="0 0 24 24"><rect x="3" y="4" width="18" height="6" rx="1.5"/><rect x="3" y="14" width="18" height="6" rx="1.5"/><path d="M7 7h.01M7 17h.01"/></svg></div>
+          <h3>Infraestrutura</h3>
+          <p>Servidores, virtualização e rede física funcionando.</p>
+          <div class="pills"><span class="pill">Windows Server</span><span class="pill">Linux</span><span class="pill">Proxmox</span><span class="pill">Redes</span><span class="pill">VoIP</span><span class="pill">Backup</span></div>
+        </div>
+        <div class="sk">
+          <div class="ic"><svg viewBox="0 0 24 24"><path d="M3 17l5-5 4 4 8-8"/><path d="M15 8h5v5"/></svg></div>
+          <h3>Monitoramento</h3>
+          <p>Saber do problema antes de ele virar chamado.</p>
+          <div class="pills"><span class="pill">Zabbix</span><span class="pill">Grafana</span></div>
+        </div>
+        <div class="sk">
+          <div class="ic"><svg viewBox="0 0 24 24"><rect x="4" y="3" width="16" height="18" rx="2"/><path d="M8 8h8M8 12h8M8 16h5"/></svg></div>
+          <h3>Gestão de serviços</h3>
+          <p>Atendimento organizado, com prazo e processo claros.</p>
+          <div class="pills"><span class="pill">GLPI</span><span class="pill">ITSM</span><span class="pill">SLA</span><span class="pill">Catálogo de serviços</span></div>
+        </div>
+      </div>
     </div>
   </section>
 
-  <section id="competencias">
-    <h2>Competências</h2>
-    <dl class="grid">
-      <dt>Identidade e cloud</dt><dd>Active Directory, LDAP, Microsoft 365, Microsoft Azure</dd>
-      <dt>Segurança</dt><dd>Wazuh (SIEM), Sophos Firewall, VPN, proxy, análise de logs</dd>
-      <dt>Infraestrutura</dt><dd>Windows Server, Linux, Proxmox, redes, VoIP, backup</dd>
-      <dt>Monitoramento</dt><dd>Zabbix, Grafana</dd>
-      <dt>Gestão de serviços</dt><dd>GLPI, ITSM, SLA, catálogo de serviços</dd>
-    </dl>
+  <section id="projetos" style="background:#f3efe7">
+    <div class="wrap">
+      <div class="rv">
+        <span class="kicker">Projetos</span>
+        <h2>Coisas que eu já coloquei de pé</h2>
+        <p class="intro">Trabalhos feitos nas empresas por onde passei, contados sem dados de clientes ou empregadores, e o que estou construindo por conta própria.</p>
+      </div>
+      <div class="projects stagger">
+        <article class="pj">
+          <div class="band" style="background:var(--teal)"></div>
+          <div class="body">
+            <span class="where">JMBA · 2025 – atual</span>
+            <h3>Monitoramento de segurança com Wazuh</h3>
+            <p>Implantei e administro o Wazuh para centralizar logs e eventos de segurança dos endpoints, com análise de alertas e de incidentes.</p>
+            <div class="pills"><span class="pill">Wazuh</span><span class="pill">SIEM</span><span class="pill">Linux</span></div>
+          </div>
+        </article>
+        <article class="pj">
+          <div class="band" style="background:var(--amber)"></div>
+          <div class="body">
+            <span class="where">JMBA · 2025 – atual</span>
+            <h3>Gestão de serviços no GLPI</h3>
+            <p>Estruturei o atendimento com catálogo de serviços, SLAs, regras de negócio, formulários e notificações, e documentei os procedimentos da equipe.</p>
+            <div class="pills"><span class="pill">GLPI</span><span class="pill">ITSM</span><span class="pill">SLA</span></div>
+          </div>
+        </article>
+        <article class="pj">
+          <div class="band" style="background:#5b7fa6"></div>
+          <div class="body">
+            <span class="where">FonNet Networks · 2025</span>
+            <h3>Monitoramento com Zabbix e Grafana</h3>
+            <p>Acompanhei a disponibilidade de servidores, serviços e ativos de infraestrutura, com painéis no Grafana.</p>
+            <div class="pills"><span class="pill">Zabbix</span><span class="pill">Grafana</span><span class="pill">Windows</span></div>
+          </div>
+        </article>
+        <article class="pj">
+          <div class="band" style="background:#b5654a"></div>
+          <div class="body">
+            <span class="where">Makro Engenharia · 2022 – 2025</span>
+            <h3>Firewall, VPN e migração de ERP</h3>
+            <p>Administrei o Sophos Firewall e os acessos VPN entre unidades, participei da migração do TOTVS RM para o Protheus e apoiei auditorias ISO 9001, 14001 e 45001.</p>
+            <div class="pills"><span class="pill">Sophos</span><span class="pill">VPN</span><span class="pill">Active Directory</span><span class="pill">ISO</span></div>
+          </div>
+        </article>
+        <article class="pj lab">
+          <div class="body">
+            <span class="soon">em andamento</span>
+            <h3>Homelab de infraestrutura e segurança</h3>
+            <p>Ambiente em Proxmox com rede segmentada, Active Directory, Wazuh e monitoramento. Uso para testar detecções com ataques simulados, e a documentação vai sair aqui no GitHub.</p>
+            <div class="pills"><span class="pill">Proxmox</span><span class="pill">Wazuh</span><span class="pill">AD</span></div>
+          </div>
+        </article>
+      </div>
+    </div>
   </section>
 
-  <section id="formacao">
-    <h2>Formação</h2>
-    <dl class="grid">
-      <dt>UNIASSELVI</dt><dd>Segurança da Informação</dd>
-      <dt>Senap Educação</dt><dd>Técnico em Manutenção de Computadores e Redes, 2017 – 2018</dd>
-      <dt>Cursos</dt><dd>Curso completo de Wazuh, do básico ao avançado (2026)<br>Fundamentos da IA Moderna: Machine Learning, LLMs, IA Generativa e Agentes</dd>
-    </dl>
+  <section id="trajetoria">
+    <div class="wrap">
+      <div class="rv">
+        <span class="kicker">Trajetória</span>
+        <h2>Por onde eu passei</h2>
+        <p class="intro">Seis empresas e sete anos, sempre em infraestrutura e suporte.</p>
+      </div>
+      <div class="tl" id="tl">
+        <div class="rail"></div><div class="fill" id="fill"></div>
+        <div class="job">
+          <span class="when">abr 2025 – atual</span>
+          <h3>Analista de Suporte Sênior</h3><span class="org">JMBA Soluções em Tecnologia</span>
+          <ul><li>Administração do GLPI: entidades, perfis, permissões, SLAs, regras, formulários, plugins e notificações</li>
+            <li>Processos ITSM, catálogo de serviços e fluxos de atendimento</li>
+            <li>Implantação e administração do Wazuh</li>
+            <li>Documentação técnica e padronização de procedimentos</li></ul>
+        </div>
+        <div class="job">
+          <span class="when">jan 2025 – abr 2025</span>
+          <h3>Analista de Infraestrutura Júnior</h3><span class="org">FonNet Networks</span>
+          <ul><li>Usuários, grupos e permissões em Active Directory, Microsoft 365 e Azure</li>
+            <li>Monitoramento com Zabbix e Grafana</li>
+            <li>Diagnóstico de incidentes de conectividade e sistemas</li></ul>
+        </div>
+        <div class="job">
+          <span class="when">jul 2022 – jan 2025</span>
+          <h3>Assistente de Infraestrutura</h3><span class="org">Makro Engenharia</span>
+          <ul><li>Active Directory e acessos em TOTVS RM, Protheus e Fluig</li>
+            <li>Sophos Firewall, VPN, redes, VoIP, servidores e backup</li>
+            <li>Migração TOTVS RM → Protheus e auditorias ISO</li>
+            <li>Orientação de estagiários e aprendizes</li></ul>
+        </div>
+        <div class="job">
+          <span class="when">mar 2022 – jul 2022</span>
+          <h3>Operador de Service Desk (N1)</h3><span class="org">Lanlink Informática</span>
+          <ul><li>Incidentes e requisições em GLPI e Assyst, triagem e acompanhamento de SLA</li></ul>
+        </div>
+        <div class="job">
+          <span class="when">jun 2021 – mar 2022</span>
+          <h3>Estagiário de Infraestrutura e Suporte</h3><span class="org">Makro Engenharia</span>
+          <ul><li>Active Directory, redes, servidores, gestão de ativos e suporte técnico</li></ul>
+        </div>
+        <div class="job">
+          <span class="when">abr 2019 – mar 2021</span>
+          <h3>Aprendiz de TI</h3><span class="org">Normatel Engenharia</span>
+          <ul><li>Active Directory, redes, gestão de ativos e automação de rotinas com scripts</li></ul>
+        </div>
+      </div>
+    </div>
   </section>
 
-  <section id="contato">
-    <h2>Contato</h2>
-    <p>Tenho interesse em oportunidades e projetos de infraestrutura, segurança e Microsoft Azure.</p>
-    <p class="links">
-      <a href="mailto:stwartep.learte@gmail.com">stwartep.learte@gmail.com</a>
-      <a href="https://www.linkedin.com/in/stwartelearte">LinkedIn</a>
-    </p>
+  <section id="formacao" style="padding-top:0">
+    <div class="wrap">
+      <div class="rv">
+        <span class="kicker">Formação</span>
+        <h2>Estudos e cursos</h2>
+      </div>
+      <div class="edu stagger" style="margin-top:28px">
+        <div class="ed"><small>Graduação</small><h3>Segurança da Informação</h3><p>UNIASSELVI</p></div>
+        <div class="ed"><small>Técnico</small><h3>Manutenção de Computadores e Redes</h3><p>Senap Educação · 2017 – 2018</p></div>
+        <div class="ed"><small>Curso</small><h3>Wazuh do básico ao avançado</h3><p>2026</p></div>
+        <div class="ed"><small>Curso</small><h3>Fundamentos da IA Moderna</h3><p>Machine Learning, LLMs, IA Generativa e Agentes</p></div>
+      </div>
+    </div>
+  </section>
+
+  <section id="contato" style="padding-top:0">
+    <div class="wrap">
+      <div class="contact rv">
+        <span class="kicker" style="color:var(--amber)">Contato</span>
+        <h2>Vamos conversar?</h2>
+        <p>Tenho interesse em oportunidades e projetos de infraestrutura, segurança e Microsoft Azure.</p>
+        <div class="cta">
+          <a class="btn main" href="mailto:stwartep.learte@gmail.com">Mandar e-mail</a>
+          <a class="btn ghost" href="https://www.linkedin.com/in/stwartelearte" target="_blank" rel="noopener">LinkedIn</a>
+          <a class="btn ghost" href="https://github.com/stwartelearte" target="_blank" rel="noopener">GitHub</a>
+        </div>
+      </div>
+    </div>
   </section>
 
 </main>
 
-<footer>
-  <div class="wrap">Stwarte Learte · Fortaleza, CE</div>
-</footer>
+<footer>Stwarte Learte · Fortaleza, CE · <span id="y"></span></footer>
 
+<script>
+  const reduce = matchMedia('(prefers-reduced-motion: reduce)').matches;
+  document.getElementById('y').textContent = new Date().getFullYear();
+
+  // nav sólida ao rolar
+  const nav = document.getElementById('nav');
+  const onScroll = () => nav.classList.toggle('solid', scrollY > 40);
+  addEventListener('scroll', onScroll, {passive:true}); onScroll();
+
+  // palavra que alterna no hero
+  const words = ['Active Directory', 'Wazuh', 'Microsoft 365', 'Microsoft Azure', 'firewall e VPN', 'GLPI', 'Zabbix e Grafana'];
+  const rot = document.getElementById('rot');
+  if (!reduce) {
+    let w = 0;
+    setInterval(() => {
+      rot.style.opacity = 0;
+      setTimeout(() => { w = (w + 1) % words.length; rot.textContent = words[w]; rot.style.opacity = 1; }, 350);
+    }, 2200);
+  }
+
+  // entrada das seções
+  const io = new IntersectionObserver(es => es.forEach(e => {
+    if (e.isIntersecting) { e.target.classList.add('in'); io.unobserve(e.target); }
+  }), {threshold:.15});
+  document.querySelectorAll('.rv,.stagger').forEach(el => io.observe(el));
+
+  // linha da trajetória que preenche ao rolar
+  const tl = document.getElementById('tl'), fill = document.getElementById('fill');
+  const jobs = [...tl.querySelectorAll('.job')];
+  function paint(){
+    const r = tl.getBoundingClientRect(), mid = innerHeight * .6;
+    const h = Math.max(0, Math.min(r.height - 16, mid - r.top));
+    fill.style.height = h + 'px';
+    jobs.forEach(j => j.classList.toggle('lit', j.getBoundingClientRect().top < mid));
+  }
+  if (reduce) { fill.style.height = '100%'; jobs.forEach(j => j.classList.add('lit')); }
+  else { addEventListener('scroll', paint, {passive:true}); paint(); }
+
+  // pacotes trafegando no diagrama
+  if (!reduce) {
+    const NS = 'http://www.w3.org/2000/svg', g = document.getElementById('pkts');
+    const P = id => document.getElementById(id);
+    const routes = [['l1','l2','l3'],['l1','l2','l4'],['l1','l2','l5'],['l6'],['l7']];
+    function send(route, bad){
+      const c = document.createElementNS(NS,'circle');
+      c.setAttribute('r', 4.5); c.setAttribute('class', 'pkt' + (bad ? ' bad' : ''));
+      g.appendChild(c);
+      let seg = 0, t = 0;
+      (function step(){
+        const p = P(route[seg]), len = p.getTotalLength();
+        t += 2.2;
+        const pt = p.getPointAtLength(Math.min(t, len));
+        c.setAttribute('cx', pt.x); c.setAttribute('cy', pt.y);
+        if (bad && route[seg] === 'l1' && t >= len) { block(c); return; }
+        if (t >= len) { seg++; t = 0; if (seg >= route.length) { c.remove(); return; } }
+        requestAnimationFrame(step);
+      })();
+    }
+    function block(c){
+      c.remove();
+      const a = P('alert'), tag = P('tag');
+      a.classList.remove('on'); void a.getBoundingClientRect(); a.classList.add('on');
+      tag.classList.add('on');
+      setTimeout(() => send(['l6'], true), 50);
+      setTimeout(() => tag.classList.remove('on'), 2200);
+    }
+    let n = 0;
+    setInterval(() => {
+      if (document.hidden) return;
+      n++;
+      if (n % 9 === 0) send(['l1'], true);
+      else send(routes[n % 3]);
+      if (n % 2 === 0) send(['l7']);
+    }, 700);
+  }
+</script>
 </body>
 </html>
