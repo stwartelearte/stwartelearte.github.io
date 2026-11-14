@@ -114,7 +114,7 @@
   .now li b{color:var(--ink);min-width:88px;font-size:.92rem}
 
   /* conhecimentos */
-  .skills{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:18px}
+  .skills{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,300px),1fr));gap:18px}
   .sk{background:var(--card);border:1px solid var(--line);border-radius:16px;padding:24px;transition:transform .25s,box-shadow .25s,border-color .25s}
   .sk:hover{transform:translateY(-4px);box-shadow:0 14px 30px rgba(20,34,51,.08);border-color:var(--amber)}
   .sk .ic{width:42px;height:42px;border-radius:12px;background:#e3f1fd;display:grid;place-items:center;margin-bottom:14px}
@@ -186,6 +186,21 @@
   .sk .ic svg{stroke:#fff}
   .ed{border-radius:24px}
   .now{border-radius:28px}
+
+
+  /* níveis de conhecimento */
+  .levels{list-style:none;display:flex;flex-direction:column;gap:10px;margin-top:4px}
+  .levels li{display:flex;justify-content:space-between;align-items:center;gap:10px;font-size:.92rem;color:var(--ink)}
+  .levels .nm{display:flex;flex-direction:column;line-height:1.25}
+  .levels small{color:var(--muted);font-size:.74rem}
+  .lvl{display:grid;grid-template-columns:repeat(3,18px);gap:3px 4px;flex-shrink:0;justify-items:end}
+  .lvl i{width:18px;height:6px;border-radius:3px;background:#dfe3e8}
+  .lvl em{grid-column:1/-1;font-style:normal;font-size:.7rem;color:var(--muted)}
+  .lvl[data-l="1"] i:nth-child(-n+1),.lvl[data-l="2"] i:nth-child(-n+2),.lvl[data-l="3"] i:nth-child(-n+3){background:var(--amber)}
+  .stagger .lvl i{transform-origin:left;transition:transform .5s ease}
+  .stagger:not(.in) .lvl i{transform:scaleX(0)}
+  .legend{display:flex;gap:18px;flex-wrap:wrap;font-size:.82rem;color:var(--muted);margin:-28px 0 28px}
+  .legend b{color:var(--ink);font-weight:600}
 
   /* trajetória */
   .tl{position:relative;margin-left:8px}
@@ -347,38 +362,39 @@
       <div class="rv">
         <span class="kicker">02 <b></b> Conhecimentos</span>
         <h2>O que eu uso no dia a dia</h2>
-        <p class="intro">Ferramentas que já usei em ambiente real de empresa, agrupadas pelo tipo de problema que resolvem.</p>
+        <p class="intro">Ferramentas que já usei em ambiente real de empresa, agrupadas pelo tipo de problema que resolvem, com o meu nível em cada uma.</p>
+        <p class="legend"><span><b>Avançado</b>: uso no dia a dia e resolvo sozinho</span><span><b>Intermediário</b>: já usei em produção</span><span><b>Básico</b>: uso pontual ou em estudo</span></p>
       </div>
       <div class="skills stagger">
         <div class="sk">
           <div class="ic"><svg viewBox="0 0 24 24"><circle cx="12" cy="8" r="4"/><path d="M4 21c0-4 4-6 8-6s8 2 8 6"/></svg></div>
           <h3>Identidade e acesso</h3>
           <p>Usuários, grupos e permissões do on-premises à nuvem.</p>
-          <div class="pills"><span class="pill">Active Directory</span><span class="pill">LDAP</span><span class="pill">Microsoft 365</span><span class="pill">Microsoft Azure</span></div>
+          <ul class="levels"><li><span class="nm">Active Directory<small>desde 2019</small></span><span class="lvl" data-l="3" title="Avançado"><i></i><i></i><i></i><em>Avançado</em></span></li><li><span class="nm">LDAP<small>integração com GLPI</small></span><span class="lvl" data-l="2" title="Intermediário"><i></i><i></i><i></i><em>Intermediário</em></span></li><li><span class="nm">Microsoft 365<small>administração de usuários</small></span><span class="lvl" data-l="2" title="Intermediário"><i></i><i></i><i></i><em>Intermediário</em></span></li><li><span class="nm">Microsoft Azure<small>estudando</small></span><span class="lvl" data-l="1" title="Básico"><i></i><i></i><i></i><em>Básico</em></span></li></ul>
         </div>
         <div class="sk">
           <div class="ic"><svg viewBox="0 0 24 24"><path d="M12 3l8 3v6c0 5-3.5 8-8 9-4.5-1-8-4-8-9V6z"/><path d="M9 12l2 2 4-4"/></svg></div>
           <h3>Segurança</h3>
           <p>Visibilidade de eventos e controle do que entra e sai da rede.</p>
-          <div class="pills"><span class="pill">Wazuh</span><span class="pill">Sophos Firewall</span><span class="pill">VPN</span><span class="pill">Proxy</span><span class="pill">Análise de logs</span></div>
+          <ul class="levels"><li><span class="nm">Wazuh<small>implantação e administração</small></span><span class="lvl" data-l="2" title="Intermediário"><i></i><i></i><i></i><em>Intermediário</em></span></li><li><span class="nm">Sophos Firewall<small>2022 – 2025</small></span><span class="lvl" data-l="2" title="Intermediário"><i></i><i></i><i></i><em>Intermediário</em></span></li><li><span class="nm">VPN<small>acessos entre unidades</small></span><span class="lvl" data-l="2" title="Intermediário"><i></i><i></i><i></i><em>Intermediário</em></span></li><li><span class="nm">Proxy</span><span class="lvl" data-l="2" title="Intermediário"><i></i><i></i><i></i><em>Intermediário</em></span></li><li><span class="nm">Análise de logs</span><span class="lvl" data-l="2" title="Intermediário"><i></i><i></i><i></i><em>Intermediário</em></span></li></ul>
         </div>
         <div class="sk">
           <div class="ic"><svg viewBox="0 0 24 24"><rect x="3" y="4" width="18" height="6" rx="1.5"/><rect x="3" y="14" width="18" height="6" rx="1.5"/><path d="M7 7h.01M7 17h.01"/></svg></div>
           <h3>Infraestrutura</h3>
           <p>Servidores, virtualização e rede física funcionando.</p>
-          <div class="pills"><span class="pill">Windows Server</span><span class="pill">Linux</span><span class="pill">Proxmox</span><span class="pill">Redes</span><span class="pill">VoIP</span><span class="pill">Backup</span></div>
+          <ul class="levels"><li><span class="nm">Redes e cabeamento<small>desde 2019</small></span><span class="lvl" data-l="3" title="Avançado"><i></i><i></i><i></i><em>Avançado</em></span></li><li><span class="nm">Windows Server</span><span class="lvl" data-l="2" title="Intermediário"><i></i><i></i><i></i><em>Intermediário</em></span></li><li><span class="nm">Linux</span><span class="lvl" data-l="2" title="Intermediário"><i></i><i></i><i></i><em>Intermediário</em></span></li><li><span class="nm">Proxmox</span><span class="lvl" data-l="2" title="Intermediário"><i></i><i></i><i></i><em>Intermediário</em></span></li><li><span class="nm">Backup<small>rotinas e verificações</small></span><span class="lvl" data-l="2" title="Intermediário"><i></i><i></i><i></i><em>Intermediário</em></span></li><li><span class="nm">Docker</span><span class="lvl" data-l="1" title="Básico"><i></i><i></i><i></i><em>Básico</em></span></li></ul>
         </div>
         <div class="sk">
           <div class="ic"><svg viewBox="0 0 24 24"><path d="M3 17l5-5 4 4 8-8"/><path d="M15 8h5v5"/></svg></div>
           <h3>Monitoramento</h3>
           <p>Saber do problema antes de ele virar chamado.</p>
-          <div class="pills"><span class="pill">Zabbix</span><span class="pill">Grafana</span></div>
+          <ul class="levels"><li><span class="nm">Zabbix<small>FonNet · 2025</small></span><span class="lvl" data-l="1" title="Básico"><i></i><i></i><i></i><em>Básico</em></span></li><li><span class="nm">Grafana<small>FonNet · 2025</small></span><span class="lvl" data-l="1" title="Básico"><i></i><i></i><i></i><em>Básico</em></span></li></ul>
         </div>
         <div class="sk">
           <div class="ic"><svg viewBox="0 0 24 24"><rect x="4" y="3" width="16" height="18" rx="2"/><path d="M8 8h8M8 12h8M8 16h5"/></svg></div>
           <h3>Gestão de serviços</h3>
           <p>Atendimento organizado, com prazo e processo claros.</p>
-          <div class="pills"><span class="pill">GLPI</span><span class="pill">ITSM</span><span class="pill">SLA</span><span class="pill">Catálogo de serviços</span></div>
+          <ul class="levels"><li><span class="nm">GLPI<small>desde 2021 · 2 implantações</small></span><span class="lvl" data-l="3" title="Avançado"><i></i><i></i><i></i><em>Avançado</em></span></li><li><span class="nm">ITSM / ITIL</span><span class="lvl" data-l="3" title="Avançado"><i></i><i></i><i></i><em>Avançado</em></span></li><li><span class="nm">SLA e catálogo de serviços</span><span class="lvl" data-l="3" title="Avançado"><i></i><i></i><i></i><em>Avançado</em></span></li></ul>
         </div>
       </div>
     </div>
