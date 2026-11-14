@@ -139,6 +139,54 @@
   .pj.lab{border-style:dashed;background:transparent}
   .soon{align-self:flex-start;font-size:.75rem;font-weight:700;color:var(--teal);background:#e3f2ef;padding:3px 10px;border-radius:999px}
 
+
+  /* pílulas de seção */
+  .kicker{display:inline-flex;align-items:center;gap:8px;padding:7px 16px;border-radius:999px;background:rgba(46,168,255,.12);color:var(--amber-d);letter-spacing:.06em}
+  .kicker b{width:6px;height:6px;border-radius:50%;background:currentColor;display:inline-block}
+  .kicker.on-dark,.panel .kicker{background:rgba(255,255,255,.14);color:#fff}
+
+  /* painel azul dos projetos */
+  .panel{background:linear-gradient(170deg,#173459 0%,#245489 55%,#2e6fae 100%);border-radius:40px;padding:64px 48px;color:#fff;box-shadow:0 30px 60px rgba(11,22,34,.25)}
+  .panel h2{color:#fff}
+  .panel .intro{color:rgba(255,255,255,.75)}
+
+  /* cards de projeto */
+  .projects{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:26px;align-items:start}
+  .pj{background:#f2f3f5;border:0;border-radius:32px;padding:14px;display:flex;flex-direction:column;transition:transform .3s,box-shadow .3s;color:var(--text)}
+  .pj:hover{transform:translateY(-6px);box-shadow:0 24px 44px rgba(0,0,0,.25)}
+  .pj .vis{position:relative;height:170px;border-radius:24px;overflow:hidden;background:radial-gradient(circle at 75% 30%,#45b4ff 0%,#1a73d1 45%,#0d3f80 100%);display:grid;place-items:center}
+  .pj .vis::before{content:"";position:absolute;inset:0;background:linear-gradient(115deg,transparent 40%,rgba(255,255,255,.18) 50%,transparent 60%);transform:translateX(-100%);transition:transform .9s ease}
+  .pj:hover .vis::before{transform:translateX(100%)}
+  .pj .vis svg{width:64px;height:64px;stroke:#fff;fill:none;stroke-width:1.4;stroke-linecap:round;stroke-linejoin:round;position:relative;filter:drop-shadow(0 6px 14px rgba(0,0,0,.3));transition:transform .4s}
+  .pj:hover .vis svg{transform:scale(1.08) rotate(-4deg)}
+  .pj .wm{position:absolute;left:14px;bottom:-14px;font-size:5.2rem;font-weight:800;letter-spacing:-.04em;color:rgba(255,255,255,.12);line-height:1}
+  .pj .body{padding:22px 14px 12px;gap:10px}
+  .pj h3{font-size:1.35rem;font-weight:600;color:var(--ink)}
+  .pj p{font-size:1rem;color:var(--muted)}
+  .pj .where{color:var(--amber-d)}
+  .pj .extra{display:grid;grid-template-rows:0fr;transition:grid-template-rows .4s ease}
+  .pj .extra>*{overflow:hidden}
+  .pj .extra{display:block;max-height:0;overflow:hidden;transition:max-height .45s ease}
+  .pj.open .extra{max-height:420px}
+  .pj .extra .pills{padding-top:10px;margin:0}
+  .pj ul.res{margin:6px 0 0 18px}
+  .more{margin-top:auto;align-self:flex-start;display:inline-flex;align-items:center;gap:12px;background:none;border:0;font:inherit;font-size:1.05rem;font-weight:500;color:var(--ink);cursor:pointer;padding:8px 0 0}
+  .more i{font-style:normal;width:32px;height:32px;border-radius:50%;background:#a9adb3;color:#fff;display:grid;place-items:center;transition:transform .3s,background .3s}
+  .more:hover i{background:var(--amber)}
+  .pj.open .more i{transform:rotate(90deg);background:var(--amber)}
+  .pj.lab{border:2px dashed rgba(255,255,255,.4);background:rgba(255,255,255,.08)}
+  .pj.lab .vis{background:radial-gradient(circle at 75% 30%,#3a5f86,#152c48)}
+  .pj.lab h3,.pj.lab .more{color:#fff}
+  .pj.lab p{color:rgba(255,255,255,.75)}
+  .pj.lab .pill{background:transparent;color:#fff;border-color:rgba(255,255,255,.3)}
+
+  /* cards de conhecimentos no mesmo estilo */
+  .sk{border-radius:28px;padding:28px}
+  .sk .ic{width:52px;height:52px;border-radius:16px;background:linear-gradient(135deg,#45b4ff,#1a5fb4)}
+  .sk .ic svg{stroke:#fff}
+  .ed{border-radius:24px}
+  .now{border-radius:28px}
+
   /* trajetória */
   .tl{position:relative;margin-left:8px}
   .tl .rail{position:absolute;left:0;top:8px;bottom:8px;width:3px;background:var(--line);border-radius:3px}
@@ -198,7 +246,9 @@
     .feed .hd span{display:none}
     section{padding:64px 0}
     .wrap{padding:0 20px}
-    .projects{grid-template-columns:1fr}
+    .projects{grid-template-columns:minmax(0,1fr)}
+    .panel{padding:44px 18px;border-radius:30px}
+    .pj .vis{height:150px}
     nav ul{display:none}
     .contact{padding:48px 24px}
   }
@@ -275,7 +325,7 @@
   <section id="sobre">
     <div class="wrap about">
       <div class="rv">
-        <span class="kicker">Sobre</span>
+        <span class="kicker">01 <b></b> Sobre</span>
         <h2>Da bancada de suporte à segurança da infraestrutura</h2>
         <p>Comecei em 2019 como aprendiz de TI, crimpando cabo e criando usuário no Active Directory. De lá pra cá passei por service desk, redes, firewall, VPN, servidores e backup, sempre perto da operação.</p>
         <p>Hoje, na JMBA Soluções em Tecnologia, cuido do GLPI e dos processos de atendimento, monitoro ambientes e implantei o Wazuh para dar visibilidade aos eventos de segurança. O próximo passo é a nuvem: estou estudando Microsoft Azure, identidade e segurança em ambientes híbridos.</p>
@@ -295,7 +345,7 @@
   <section id="conhecimentos" style="padding-top:0">
     <div class="wrap">
       <div class="rv">
-        <span class="kicker">Conhecimentos</span>
+        <span class="kicker">02 <b></b> Conhecimentos</span>
         <h2>O que eu uso no dia a dia</h2>
         <p class="intro">Ferramentas que já usei em ambiente real de empresa, agrupadas pelo tipo de problema que resolvem.</p>
       </div>
@@ -334,56 +384,70 @@
     </div>
   </section>
 
-  <section id="projetos" style="background:#f3efe7">
+  <section id="projetos">
     <div class="wrap">
+    <div class="panel">
       <div class="rv">
-        <span class="kicker">Projetos</span>
+        <span class="kicker">03 <b></b> Projetos</span>
         <h2>Coisas que eu já coloquei de pé</h2>
         <p class="intro">Trabalhos feitos nas empresas por onde passei, contados sem dados de clientes ou empregadores, e o que estou construindo por conta própria.</p>
       </div>
       <div class="projects stagger">
         <article class="pj">
-          <div class="band" style="background:var(--teal)"></div>
+          <div class="vis"><span class="wm">SIEM</span><svg viewBox="0 0 24 24"><path d="M12 3l8 3v6c0 5-3.5 8-8 9-4.5-1-8-4-8-9V6z"/><path d="M9 12l2 2 4-4"/></svg></div>
           <div class="body">
             <span class="where">JMBA · 2025 – atual</span>
             <h3>Monitoramento de segurança com Wazuh</h3>
             <p>Implantei e administro o Wazuh para centralizar logs e eventos de segurança dos endpoints, com análise de alertas e de incidentes.</p>
+            <div class="extra">
             <div class="pills"><span class="pill">Wazuh</span><span class="pill">SIEM</span><span class="pill">Linux</span></div>
+            </div>
+            <button class="more" type="button" aria-expanded="false">Saiba mais <i>→</i></button>
           </div>
         </article>
         <article class="pj">
-          <div class="band" style="background:var(--amber)"></div>
+          <div class="vis"><span class="wm">ITSM</span><svg viewBox="0 0 24 24"><rect x="5" y="4" width="14" height="17" rx="2"/><path d="M9 4h6v3H9zM8.5 11h7M8.5 15h5"/></svg></div>
           <div class="body">
             <span class="where">JMBA · 2025 – atual</span>
             <h3>Gestão de serviços no GLPI</h3>
             <p>Estruturei o atendimento com catálogo de serviços, SLAs, regras de negócio, formulários e notificações, e documentei os procedimentos da equipe.</p>
+            <div class="extra">
             <div class="pills"><span class="pill">GLPI</span><span class="pill">ITSM</span><span class="pill">SLA</span></div>
+            </div>
+            <button class="more" type="button" aria-expanded="false">Saiba mais <i>→</i></button>
           </div>
         </article>
         <article class="pj">
-          <div class="band" style="background:#5b7fa6"></div>
+          <div class="vis"><span class="wm">NOC</span><svg viewBox="0 0 24 24"><path d="M3 20h18"/><path d="M5 16l4-5 4 3 6-8"/></svg></div>
           <div class="body">
             <span class="where"><a href="https://www.fonnet.com.br/" target="_blank" rel="noopener">FonNet Networks ↗</a> · 2025</span>
             <h3>Monitoramento com Zabbix e Grafana</h3>
             <p>Acompanhei a disponibilidade de servidores, serviços e ativos de infraestrutura, com painéis no Grafana.</p>
+            <div class="extra">
             <div class="pills"><span class="pill">Zabbix</span><span class="pill">Grafana</span><span class="pill">Windows</span></div>
+            </div>
+            <button class="more" type="button" aria-expanded="false">Saiba mais <i>→</i></button>
           </div>
         </article>
         <article class="pj">
-          <div class="band" style="background:#b5654a"></div>
+          <div class="vis"><span class="wm">VPN</span><svg viewBox="0 0 24 24"><rect x="5" y="10" width="14" height="10" rx="2"/><path d="M8 10V7a4 4 0 0 1 8 0v3"/></svg></div>
           <div class="body">
             <span class="where"><a href="https://makroengenharia.com.br/" target="_blank" rel="noopener">Makro Engenharia ↗</a> · 2022 – 2025</span>
             <h3>Firewall, VPN e migração de ERP</h3>
             <p>Administrei o Sophos Firewall e os acessos VPN entre unidades, participei da migração do TOTVS RM para o Protheus e apoiei auditorias ISO 9001, 14001 e 45001.</p>
+            <div class="extra">
             <div class="pills"><span class="pill">Sophos</span><span class="pill">VPN</span><span class="pill">Active Directory</span><span class="pill">ISO</span></div>
+            </div>
+            <button class="more" type="button" aria-expanded="false">Saiba mais <i>→</i></button>
           </div>
         </article>
         <article class="pj">
-          <div class="band" style="background:#7a6aa8"></div>
+          <div class="vis"><span class="wm">CSC</span><svg viewBox="0 0 24 24"><path d="M12 3l9 5-9 5-9-5z"/><path d="M3 13l9 5 9-5"/></svg></div>
           <div class="body">
             <span class="where"><a href="https://makroengenharia.com.br/" target="_blank" rel="noopener">Makro Engenharia ↗</a> · nov 2024 – jan 2025</span>
             <h3>Plataforma CSM: Centro de Serviços Compartilhados no GLPI</h3>
             <p>Implantei um Centro de Serviços Compartilhados no GLPI, unificando vários setores numa única plataforma de atendimento.</p>
+            <div class="extra">
             <ul class="res">
               <li>Chamados e histórico de demandas centralizados</li>
               <li>Fluxos automatizados para os processos</li>
@@ -391,14 +455,17 @@
               <li>Mais rastreabilidade e controle das solicitações</li>
             </ul>
             <div class="pills"><span class="pill">GLPI</span><span class="pill">CSC</span><span class="pill">ITSM</span><span class="pill">Linux</span></div>
+            </div>
+            <button class="more" type="button" aria-expanded="false">Saiba mais <i>→</i></button>
           </div>
         </article>
         <article class="pj">
-          <div class="band" style="background:#e07b39"></div>
+          <div class="vis"><span class="wm">GLPI</span><svg viewBox="0 0 24 24"><rect x="4" y="4" width="16" height="7" rx="1.5"/><rect x="4" y="13" width="16" height="7" rx="1.5"/><path d="M8 7.5h.01M8 16.5h.01"/></svg></div>
           <div class="body">
             <span class="where">CDG Engenharia · fev 2026 – jun 2026 · projeto independente</span>
             <h3>Implantação e estruturação do GLPI</h3>
             <p>Implantação do GLPI para gestão de chamados, suporte técnico e organização dos processos de TI, entregue documentado e pronto para a operação do dia a dia.</p>
+            <div class="extra">
             <ul class="res">
               <li>Configuração do ambiente, servidor e integração com banco de dados</li>
               <li>Autenticação via Active Directory/LDAP e configuração de SMTP</li>
@@ -406,24 +473,31 @@
               <li>Procedimentos de backup e documentação técnica operacional</li>
             </ul>
             <div class="pills"><span class="pill">GLPI</span><span class="pill">Linux</span><span class="pill">Docker</span><span class="pill">LDAP</span><span class="pill">Backup</span></div>
+            </div>
+            <button class="more" type="button" aria-expanded="false">Saiba mais <i>→</i></button>
           </div>
         </article>
         <article class="pj lab">
+          <div class="vis"><span class="wm">LAB</span><svg viewBox="0 0 24 24"><path d="M9 3h6M10 3v6l-5 9a2 2 0 0 0 2 3h10a2 2 0 0 0 2-3l-5-9V3"/></svg></div>
           <div class="body">
             <span class="soon">em andamento</span>
             <h3>Homelab de infraestrutura e segurança</h3>
             <p>Ambiente em Proxmox com rede segmentada, Active Directory, Wazuh e monitoramento. Uso para testar detecções com ataques simulados, e a documentação vai sair aqui no GitHub.</p>
+            <div class="extra">
             <div class="pills"><span class="pill">Proxmox</span><span class="pill">Wazuh</span><span class="pill">AD</span></div>
+            </div>
+            <button class="more" type="button" aria-expanded="false">Saiba mais <i>→</i></button>
           </div>
         </article>
       </div>
+    </div>
     </div>
   </section>
 
   <section id="trajetoria">
     <div class="wrap">
       <div class="rv">
-        <span class="kicker">Trajetória</span>
+        <span class="kicker">04 <b></b> Trajetória</span>
         <h2>Por onde eu passei</h2>
         <p class="intro">Seis empresas e sete anos, sempre em infraestrutura e suporte.</p>
       </div>
@@ -517,7 +591,7 @@
   <section id="formacao" style="padding-top:0">
     <div class="wrap">
       <div class="rv">
-        <span class="kicker">Formação</span>
+        <span class="kicker">05 <b></b> Formação</span>
         <h2>Estudos e cursos</h2>
       </div>
       <div class="edu stagger" style="margin-top:28px">
@@ -532,7 +606,7 @@
   <section id="contato" style="padding-top:0">
     <div class="wrap">
       <div class="contact rv">
-        <span class="kicker" style="color:var(--amber)">Contato</span>
+        <span class="kicker on-dark">06 <b></b> Contato</span>
         <h2>Vamos conversar?</h2>
         <p>Tenho interesse em oportunidades e projetos de infraestrutura, segurança e Microsoft Azure.</p>
         <div class="cta">
@@ -567,6 +641,14 @@
       setTimeout(() => { w = (w + 1) % words.length; rot.textContent = words[w]; rot.style.opacity = 1; }, 350);
     }, 2200);
   }
+
+
+  // saiba mais nos cards
+  document.querySelectorAll('.pj .more').forEach(b => b.addEventListener('click', () => {
+    const open = b.closest('.pj').classList.toggle('open');
+    b.setAttribute('aria-expanded', open);
+    b.firstChild.textContent = open ? 'Mostrar menos ' : 'Saiba mais ';
+  }));
 
   // entrada das seções
   const io = new IntersectionObserver(es => es.forEach(e => {
